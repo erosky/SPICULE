@@ -1,4 +1,4 @@
-(--dry-run) --info=progress2 --include '*hist.mat' --include '*.nc' --include '*.mp4' --include '*.seq' --exclude '*' 
+(--dry-run) --info=progress2 --ignore-existing --include '*.png' --include '*hist.mat' --include '*.nc' --include '*.mp4' --include '*.seq' --exclude '*' 
 
 
 Machines:

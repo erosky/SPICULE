@@ -9,3 +9,6 @@
 
 # exclude .seq files
 *.seq
+
+# exclude .png files
+*.png
