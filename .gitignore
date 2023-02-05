@@ -1,0 +1,11 @@
+# exclude netCDF files
+*.nc
+
+# exclude video files
+*.mp4
+
+# exclude hist.mat files
+*hist.mat
+
+# exclude .seq files
+*.seq
