@@ -1,0 +1,74 @@
+2022/06/15 00:37:41.5949 on gabor :	Prepared Sequence 2 from config file /hulk/data/Elise/SPICULE/SPICULE_Instrument_Comparison/RF04/Segment_C/Holodec/core/holoviewer.cfg in 0.36 s. 0.05 s config load time, 0.30 s misc time, and 0.01 s parpool start time.
+
+2022/06/15 00:37:41.6138 on gabor :	ReconHoloHist ver. 2017-01-20 part of HoloSuite (c) 2017 Jacob Fugal et al.
+2022/06/15 00:37:41.6214 on gabor :	Reconstructing 2021-06-05-19-45-02-918934.png.
+
+2022/06/15 01:20:08.3775 on gabor :	Finished reconstructing 2021-06-05-19-45-02-918934.png in 2546.76 seconds using 1 workers on gabor.phy
+With timing 0.02 s setup, 17.81 s  prerecon with 2.58 s filter time and 0.52 s determine threshold time, 2479.18 s recon with 1.000 loop efficiency, 0.49 s postrecon, 43.91 s pStats, 5.06 s save.
+
+2022/06/15 01:20:08.3887 on gabor :	ReconHoloHist ver. 2017-01-20 part of HoloSuite (c) 2017 Jacob Fugal et al.
+2022/06/15 01:20:08.3941 on gabor :	Reconstructing 2021-06-05-19-45-06-804119.png.
+
+2022/06/15 02:04:13.4319 on gabor :	Finished reconstructing 2021-06-05-19-45-06-804119.png in 2645.03 seconds using 1 workers on gabor.phy
+With timing 0.02 s setup, 17.42 s  prerecon with 2.33 s filter time and 0.52 s determine threshold time, 2563.50 s recon with 1.000 loop efficiency, 0.85 s postrecon, 59.99 s pStats, 2.93 s save.
+
+2022/06/15 02:04:13.4630 on gabor :	ReconHoloHist ver. 2017-01-20 part of HoloSuite (c) 2017 Jacob Fugal et al.
+2022/06/15 02:04:13.4689 on gabor :	Reconstructing 2021-06-05-19-45-02-620276.png.
+
+2022/06/15 02:50:40.7680 on gabor :	Finished reconstructing 2021-06-05-19-45-02-620276.png in 2787.29 seconds using 1 workers on gabor.phy
+With timing 0.01 s setup, 17.34 s  prerecon with 2.15 s filter time and 0.52 s determine threshold time, 2674.69 s recon with 1.000 loop efficiency, 0.49 s postrecon, 91.94 s pStats, 2.40 s save.
+
+2022/06/15 02:50:40.8078 on gabor :	ReconHoloHist ver. 2017-01-20 part of HoloSuite (c) 2017 Jacob Fugal et al.
+2022/06/15 02:50:40.8147 on gabor :	Reconstructing 2021-06-05-19-45-04-413496.png.
+
+2022/06/15 03:32:50.9722 on gabor :	Finished reconstructing 2021-06-05-19-45-04-413496.png in 2530.15 seconds using 1 workers on gabor.phy
+With timing 0.02 s setup, 17.31 s  prerecon with 1.84 s filter time and 0.62 s determine threshold time, 2458.06 s recon with 1.000 loop efficiency, 0.46 s postrecon, 52.07 s pStats, 1.96 s save.
+
+2022/06/15 03:32:50.9862 on gabor :	ReconHoloHist ver. 2017-01-20 part of HoloSuite (c) 2017 Jacob Fugal et al.
+2022/06/15 03:32:50.9918 on gabor :	Reconstructing 2021-06-05-19-45-05-11113.png.
+
+2022/06/15 04:15:57.6475 on gabor :	Finished reconstructing 2021-06-05-19-45-05-11113.png in 2586.66 seconds using 1 workers on gabor.phy
+With timing 0.01 s setup, 16.98 s  prerecon with 1.76 s filter time and 0.56 s determine threshold time, 2495.93 s recon with 1.000 loop efficiency, 0.46 s postrecon, 70.46 s pStats, 2.48 s save.
+
+2022/06/15 04:15:57.6647 on gabor :	ReconHoloHist ver. 2017-01-20 part of HoloSuite (c) 2017 Jacob Fugal et al.
+2022/06/15 04:15:57.6715 on gabor :	Reconstructing 2021-06-05-19-45-01-723253.png.
+
+2022/06/15 05:00:55.6905 on gabor :	Finished reconstructing 2021-06-05-19-45-01-723253.png in 2698.01 seconds using 1 workers on gabor.phy
+With timing 0.02 s setup, 16.78 s  prerecon with 1.81 s filter time and 0.52 s determine threshold time, 2611.66 s recon with 1.000 loop efficiency, 0.51 s postrecon, 65.10 s pStats, 3.56 s save.
+
+2022/06/15 05:00:55.7626 on gabor :	ReconHoloHist ver. 2017-01-20 part of HoloSuite (c) 2017 Jacob Fugal et al.
+2022/06/15 05:00:55.7702 on gabor :	Reconstructing 2021-06-05-19-45-03-815479.png.
+
+2022/06/15 05:49:09.5503 on gabor :	Finished reconstructing 2021-06-05-19-45-03-815479.png in 2893.76 seconds using 1 workers on gabor.phy
+With timing 0.02 s setup, 17.09 s  prerecon with 1.84 s filter time and 0.53 s determine threshold time, 2793.51 s recon with 1.000 loop efficiency, 0.46 s postrecon, 76.08 s pStats, 6.19 s save.
+
+2022/06/15 05:49:09.5968 on gabor :	ReconHoloHist ver. 2017-01-20 part of HoloSuite (c) 2017 Jacob Fugal et al.
+2022/06/15 05:49:09.6042 on gabor :	Reconstructing 2021-06-05-19-45-00-527815.png.
+
+2022/06/15 09:34:46.4041 on rosky-Lenovo-Y520-15IKBN :	Prepared Sequence 2 from config file /home/simulations/SPICULE/SPICULE_Instrument_Comparison/RF04/Segment_C/Holodec/core/holoviewer_laptop.cfg in 0.41 s. 0.06 s config load time, 0.35 s misc time, and 0.00 s parpool start time.
+
+2022/06/15 09:34:46.4136 on rosky-Lenovo-Y520-15IKBN :	ReconHoloHist ver. 2017-01-20 part of HoloSuite (c) 2017 Jacob Fugal et al.
+2022/06/15 09:34:46.4176 on rosky-Lenovo-Y520-15IKBN :	Reconstructing 2021-06-05-19-45-02-918934.png.
+
+2022/06/15 09:36:46.0418 on rosky-Lenovo-Y520-15IKBN :	Prepared Sequence 2 from config file /home/simulations/SPICULE/SPICULE_Instrument_Comparison/RF04/Segment_C/Holodec/core/holoviewer_laptop.cfg in 0.19 s. 0.03 s config load time, 0.16 s misc time, and 0.00 s parpool start time.
+
+2022/06/15 09:36:46.0504 on rosky-Lenovo-Y520-15IKBN :	ReconHoloHist ver. 2017-01-20 part of HoloSuite (c) 2017 Jacob Fugal et al.
+2022/06/15 09:36:46.0535 on rosky-Lenovo-Y520-15IKBN :	Reconstructing 2021-06-05-19-45-06-804119.png.
+
+2022/06/15 10:03:46.4298 on rosky-Lenovo-Y520-15IKBN :	Prepared Sequence 2 from config file /home/simulations/SPICULE/SPICULE_Instrument_Comparison/RF04/Segment_C/Holodec/core/holoviewer_laptop.cfg in 0.19 s. 0.03 s config load time, 0.15 s misc time, and 0.00 s parpool start time.
+
+2022/06/15 10:03:46.4355 on rosky-Lenovo-Y520-15IKBN :	ReconHoloHist ver. 2017-01-20 part of HoloSuite (c) 2017 Jacob Fugal et al.
+2022/06/15 10:03:46.4391 on rosky-Lenovo-Y520-15IKBN :	Reconstructing 2021-06-05-19-45-03-516634.png.
+
+2022/06/15 10:59:15.7792 on rosky-Lenovo-Y520-15IKBN :	Finished reconstructing 2021-06-05-19-45-03-516634.png in 3329.33 seconds using 1 workers on rosky-Lenovo-Y520-15IKBN
+With timing 0.01 s setup, 16.05 s  prerecon with 1.74 s filter time and 0.51 s determine threshold time, 3221.64 s recon with 1.000 loop efficiency, 0.44 s postrecon, 81.61 s pStats, 8.90 s save.
+
+2022/06/15 10:59:15.8401 on rosky-Lenovo-Y520-15IKBN :	ReconHoloHist ver. 2017-01-20 part of HoloSuite (c) 2017 Jacob Fugal et al.
+2022/06/15 10:59:15.8442 on rosky-Lenovo-Y520-15IKBN :	Reconstructing 2021-06-05-19-45-00-22979.png.
+
+2022/06/15 12:22:19.0845 on rosky-Lenovo-Y520-15IKBN :	Finished reconstructing 2021-06-05-19-45-00-22979.png in 4983.29 seconds using 1 workers on rosky-Lenovo-Y520-15IKBN
+With timing 0.01 s setup, 16.99 s  prerecon with 1.69 s filter time and 0.57 s determine threshold time, 4771.16 s recon with 1.000 loop efficiency, 0.53 s postrecon, 132.61 s pStats, 58.89 s save.
+
+2022/06/15 12:22:19.3292 on rosky-Lenovo-Y520-15IKBN :	ReconHoloHist ver. 2017-01-20 part of HoloSuite (c) 2017 Jacob Fugal et al.
+2022/06/15 12:22:19.3336 on rosky-Lenovo-Y520-15IKBN :	Reconstructing 2021-06-05-19-45-02-22373.png.
+
