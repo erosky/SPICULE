@@ -1,0 +1,65 @@
+SPICULE research flight 10
+05/25/2021
+Elise Rosky
+
+(C = carousel, S = slide)
+Texas pan-handle convection
+
+Log format:
+Slide, Timestamp, Seconds of exposure, Notes
+
+
+------------------
+inflow aerosols SE of cloud study area
+
+C1S1	20:18	180.0	alt 7500-5000ft
+
+C1S2	20:22	180.0	alt 5000ft
+
+C1S3	20:26	180.0	
+
+C1S4	20:30	180.0	
+
+C2S1	20:34	180.0	
+
+C2S2	22:41	180.0	
+
+-------------------
+Approaching clouds from the SE
+
+C2S3	20:41	180.0	alt 5000ft
+
+C2S4	20:46	180.0	5000ft, beneath clouds, below cloud base, started climbing at 20:48
+
+C3S1	20:51	180.0	7000-9000ft, climbing, no LWC detected
+
+C3S2	20:56	180.0	9000ft
+
+C3S3	21:00	180.0	9000ft
+
+C3S4	21:03	90	retracted at 21:05 as GV starts to climb, ~1.5 minute exposure
+
+--------------------
+Cloud work exposures
+
+C4S1	21:20	120	exposed during turn and climb, retracted at 21:22, no LWC detected during exposure, alt 10000 - 14000ft
+
+C4S2	--	--	got wet, bad data
+
+--------------------
+Cloud base work
+
+C4S3	21:42	180.0	on descent from 11500 - 9000 ft
+
+C4S4	21:45	180.0	9000ft, below cloud base
+
+--------------------
+Ferry home
+
+C5S1	21:53	90	12500 - 15000ft, slide may have gotten wet, extracted at 21:54:56, ~1.5 min exposure
+
+C5S2	--	40	nothing. exposed for only 40 seconds when approaching Jeffco for landing
+
+
+
+

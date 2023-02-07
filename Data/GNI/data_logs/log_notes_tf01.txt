@@ -1,0 +1,111 @@
+SPICULE test flight 01
+05/25/21
+Elise Rosky
+
+Overview summary:
+(C = carousel, S = slide)
+C1S1 through C6S2 were exposed. 22 out of 32 slides exposed.
+C3S1, C3S2, C3S3, C6S1 are invalid.
+
+Log format:
+Slide, Timestamp, Seconds of exposure, Notes
+
+--------------------
+The following slides were taken in the same vicinity, in clear air, centered at 41°35'N 103°00'W
+
+C1S1	1930	60.0	alt ~3600m, straight flight path, NE trajectory, 350m/s 
+
+C1S2	1935	180.0	alt ~3600m, mid-turn
+
+C1S3	1939	600.0	alt ~3600m-3900m, altitude gain, alt 3900m-4500m at 1942, alt 4500m-5100m at 1947
+
+C1S4	1952	60.0	alt 5100m, straight flight path, upwind
+
+C2S1	2002	180.0	alt 5100m, circle maneuvers
+
+------------------
+The following slides were taked during the HCR box maneuver, in clear air, centered at 41°35'N 104°00'W
+
+C2S2	2006	600.0	alt 5100m, upwind
+
+C2S3	2021	60.0	alt 5100m, downwind
+
+C2S4	2023	180.0	alt 5100m, downwind
+
+-----------------
+The following slides were taken in potentially cloudy conditions
+
+C3S4	2120	60.0	alt 5400m, cloudy, 41°30'N 105°36'W
+
+C4S1	2126	180.0	alt 5400m, cloudy, straight fllight path, initially was not exposed and instrument had to be reset with "home all" at 2124
+
+
+----------------
+The following slides were taken during cloud work, one minute exposures, while aircraft is turning outside of cloud, hopefully clear air, altitude at ~5200m
+
+C4S2	2130	60.0	mid-turn
+
+C4S3	2136	60.0	mid-turn
+
+C4S4	2142	60.0	mid-turn
+
+C5S1	2143	60.0	same turn as C4S4
+
+C5S2	2145	60.0	same turn as C4S4 and C5S1
+
+
+------------------
+The following slides were taken while heading back to RAF in clear air
+
+C5S3	2152	60.0	alt 5100m, turning out of cloud
+
+C5S4	2154	180.0	alt 5100-4700m, altitude dropping
+
+C6S2	2202	600.0	alt 4700m, boundary layer, last exposure before landing
+
+
+------------------
+ERROR LOG
+------------------
+The following slides are invalid for data
+
+C3S1	2028	600.0
+
+Slide got stuck in "slide loaded" state (blue)
+Actuator "Pull
+Pickup "Down"
+Shuttle "Home"
+
+Josh fixed by doing "Stop all", "Expose", "Retract"
+Slide was expose for a second or two.
+
+C3S2	2054	600.0	
+
+alt 5150m-5800m, some moisture present, mostly clear air, cloud work began 2001
+Timer expired at 2105 and instrument became stuck in an unknown state
+Actuator "Pull"
+Pickup "Down"
+Shuttle "Unknown"
+
+Josh used "Home Shuttle" command, which moved shuttle state to "Home" and slide to "Loaded"
+Error message when passing "Retract" command: "Linear Stage is not in position to retract slide"
+Error message persists after restaring GNI GUI software.
+Solved by exposing again, and then retracting.
+
+C3S3	2116	10.0
+
+Test slide after recovering previous slide
+
+C6S1	2158	10.0
+
+accidentally set timer for 10 seconds instead of 10 minutes
+Slide got stuck in "slide loaded" state (blue)
+Actuator "Pull
+Pickup "Down"
+Shuttle "Home"
+
+Elise fixed by doing "Stop all", "Expose", "Retract"
+Slide was expose for a second or two.
+
+
+

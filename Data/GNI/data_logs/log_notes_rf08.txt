@@ -1,0 +1,86 @@
+SPICULE research flight 09
+06/17/21
+Elise Rosky and Jorgen Jensen
+
+Overview summary:
+(C = carousel, S = slide)
+flight start 	22:06
+flight end	00:40
+
+
+Log format:
+Slide, Timestamp, Seconds of exposure, Notes
+
+
+------------------
+The following slides (C1S1 - C2S1) were exposed during ferry to target area in BL
+
+C1S1 - C1S3	not good for data, either got wet, partially wet, or not exposed (skipped)
+
+C1S2	22:28	180.0	alt 5292ft, below cloud base
+
+C2S1	--	180.0	below cloud base then climbed for cloud pass, slide partial in cloud
+
+C2S2	22:57	180.0	
+
+C2S3	23:01	180.0	got precip at 13:03, may have gotten a little on slide MAYBE
+
+C2S4	23:07	180.0	"many clouds were raining in this area", a bit of LWC from the king probe at 23:08, probably did not get wet
+
+C3S1	23:15	90	(stuck in loaded state) alt 5250 - 6500ft
+
+-------------------
+C3S2	23:48	60	below cloud at ~6300ft, retracted at 23:49
+
+C3S3	23:51	120	exposed below cloud at 6800ft, retracted at 23:53
+
+
+------------------
+C3S4	00:14	180.0	out of cloud, alt 8250 - 6250ft
+
+C4S1	--	180.0	6250ft
+
+C4S2	--	180.0	6350ft
+
+C4S3	--	180.0	5300ft
+
+C4S4	--	180.0	5300ft
+
+C5S1	00:33	180.0	(stuck in loaded state) retracted manually, 5300 ft
+
+C5S2	--	180.0	5300ft
+
+-------------------
+Going to new study area
+
+C5S3	--	180.0	5300 - 6300ft
+
+C5S4	--	180.0	6300ft
+
+C6S1	--	180.0	6300ft
+
+C6S2	01:17	160	6300ft, manually retracted at 01:20:06
+
+-----------------
+Below target cloud
+
+C6S3		180.0	7285ft
+
+C6S4	01:25	160	7255 ft, manually retracted at 01:27:34
+
+-------------------
+C7S1	02:02	90	alt 10000 - 8000 ft, manually retracted at 02:04:04
+
+-------------------
+Post-prontal air, in transit from cloud study to Salina
+
+C7S2	--	180.0	4000 - 3100ft
+
+C7S3	--	180.0	3100ft
+
+C7S4	--	180.0	3100-1500ft
+
+C8S1	--	--	plane was landed on the ground, no good
+
+
+

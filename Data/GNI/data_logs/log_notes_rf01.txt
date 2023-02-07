@@ -1,0 +1,107 @@
+SPICULE research flight 01
+05/29/21
+Elise Rosky
+
+Overview summary:
+(C = carousel, S = slide)
+flight start 	15:31
+flight end	19:58
+
+
+Log format:
+Slide, Timestamp, Seconds of exposure, Notes
+
+
+------------------
+The following slides (C1S1 - C2S4) were exposed during ferry out to target area
+
+C1S1	15:35	60.0	Altitude unknown, flying over Denver area
+
+C1S2	15:38	180.0	Altitude unknown
+
+C1S3	15:42	600.0	alt 2800m, boundary layer
+
+C1S4	15:53	60.0	alt 2800m, boundary layer
+
+C2S1	15:55	180.0	alt 2800m
+
+C2S2	15:59	600.0	alt 2800m, alt drops to 2000m between 16:04 and 16:08, 
+			then continues to drop to ~1810m
+
+C2S3	16:10	60.0	alt 1820m, "Should be in teh clear, just to the west of stratus deck.
+			Very good sampling conditions for GNI and CFDC"
+
+C2S4	16:11	180.0	alt 1820m (6000 ft), At 16:13 Jan says "Still not below cloud here,
+			just little wisps. Not yet good GNI and CFDC conditions"
+
+
+-------------------
+The following slides (C3S1 - C4S1) were exposed in the boundary layer, out of cloud, during North South flight legs centered at 37°55'N, 102°47'W. Good aerosol sampling conditions.
+
+C3S1	16:27	60.0	alt 1675m
+
+C3S2	16:30	180.0	alt 1675m, "Dewpoint is 11-12C, so still in moist air"
+
+C3S3	16:34	600.0	alt 1750m, 1000 ft AGL
+
+C3S4	16:45	60.0	alt 1745m
+
+C4S1	16:47	180.0	alt 1745m, southward straight flight path
+
+
+-------------------
+The following slides (C4S2, C4S3) were exposed during ferry to join up with the Lear, both in clear air.
+
+C4S3	16:51	60.0	altitude gain across minute, 1740 - 2100m, 38°00'N 103°00'W
+
+C4S3	16:54	180.0	alt 2480m, moving NW of previous sampling region
+
+
+--------------------
+The following slides (C4S4 - C5S3) are exposed while heading to a potential target region, at altitude of ~1700m, clear air.
+
+C4S4	16:59	60.0
+
+C5S1	17:01	180.0	
+
+C5S2	17:05	60.0
+
+C5S3	17:07	180.0
+
+
+--------------------
+The following slides are a continuation of the aerosol sampling in the same region of the earlier North South flight legs centered at 37°55'N, 102°47'W.
+
+C5S4	17:13	600.0	alt 1700m
+
+C6S1	17:33	180.0	alt 1760m
+
+
+--------------------
+Below cloud base of sampled cloud
+
+C6S2	18:30	180.0	alt 8,400-9,500ft altitude gain
+
+C6S3	18:34	60.0	alt >9,500ft
+
+C6S4	18:35	180.0	alt ~10,000 ft and climbing
+
+C7S1	18:39	60.0	potenitally got wet from cloud, but should be okay I think. GV was still turning when slide was exposed. "About to enter cloud" at 18:41
+
+
+--------------------
+Ferry home
+
+C7S2	19:34	180.0
+
+C7S3	19:38	600.0
+
+C7S4	19:48	60.0
+
+C8S1	19:50	180.0
+
+C8S2	19:54	60.0
+
+C8S3	19:55	60.0
+
+

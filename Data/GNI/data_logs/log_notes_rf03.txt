@@ -1,0 +1,17 @@
+SPICULE research flight 03
+05/29/21
+Elise Rosky
+
+Overview summary:
+(C = carousel, S = slide)
+flight start 	
+flight end	
+
+
+Log format:
+Slide, Timestamp, Seconds of exposure, Notes
+
+
+------------------
+The following slide was exposed
+
