@@ -12,3 +12,9 @@
 
 # exclude .png files
 *.png
+
+# exclude .jpg files
+*.jpg
+
+# exclude .gif files
+*.gif
