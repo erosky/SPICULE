@@ -1,0 +1,8 @@
+
+mogrify -crop 924x918+0+135 -path ./cropped *.png
+
+convert -delay 20 -loop 0 *.png rf04.gif
+
+convert rf04.gif -coalesce -repage 0x0 -crop 924x918+0+135 +repage rf04-cropped.gif
+
+convert -resize 50% rf04-cropped2.gif rf04-small.gif
