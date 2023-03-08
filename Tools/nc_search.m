@@ -14,6 +14,10 @@ function [indices, timestamps] = nc_search(ncfile)
     flightnumber = upper(ncreadatt(ncfile, '/', 'FlightNumber'));
     flightdate = ncreadatt(ncfile, '/', 'FlightDate');
     
+    %Reshape the concentration array into two dimensions
+    s = size(conc)
+    conc2 = reshape(conc, [s(1), s(3)]);
+    s2 = size(conc2)
     
     % Define LWC threshold for cloud
     LWC_threshold = 0.5; % g/m3
