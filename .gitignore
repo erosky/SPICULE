@@ -18,3 +18,6 @@
 
 # exclude .gif files
 *.gif
+
+# exclude .tar files
+*.tar*
