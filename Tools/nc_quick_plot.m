@@ -1,7 +1,6 @@
-function out = manually_filter_cloudpasses(cloudpassfile, ncfile)
-    % Plot a snapshot of cloudpasses of interest
-    % manually accept or reject them
-    % store data for the accepted passes
+function out = nc_quick_plot(cloudpassfile, ncfile)
+    % Plot a snapshot of cloudpasses of interest, select variable of
+    % interest from aircraft netcdf file
     
 
     %Get data from the netCDF file
@@ -35,6 +34,8 @@ function out = manually_filter_cloudpasses(cloudpassfile, ncfile)
     lon = ncread(ncfile,'LON');
     dpt = ncread(ncfile,'DPXC'); % dewpoint temp
     mr = ncread(ncfile,'MR'); % mixing ratio
+    psxc = ncread(ncfile,'PSXC'); % mixing ratio dependency (corrected static pressure)
+    ewx = ncread(ncfile,'EWX'); % mixing ratio dependency (ambient water vapor pressure)
     
     
     % Reformat time to human readable format
@@ -97,100 +98,27 @@ function out = manually_filter_cloudpasses(cloudpassfile, ncfile)
  
          %LWC
          ax3 = nexttile;
-         plot(datenum(time2(logicalIndexes)), cdplwc(logicalIndexes))
+         plot(datenum(time2(logicalIndexes)), ewx(logicalIndexes))
          datetick('x')
          xlabel('Time')
-         ylabel('LWC (g/m3)')
+         ylabel('Ambient Water Vapor Pressure')
          legend()
          grid on
          
          %LWC
          ax4 = nexttile;
-         plot(datenum(time2(logicalIndexes)), temp(logicalIndexes))
+         plot(datenum(time2(logicalIndexes)), psxc(logicalIndexes))
          datetick('x')
          xlabel('Time')
-         ylabel('Temperature (C)')
-         legend(sprintf('Large droplets (>15um) = %f', largeconc))
+         ylabel('Corrected Static Pressure')
          grid on
  
          %Link axes
          linkaxes([ax1, ax2, ax3, ax4],'x');
          
          % Ask user if we should keep the cloudpass
-         prompt = "Save this cloudpass? Y/N: ";
+         prompt = "Next? Y/N: ";
          txt = input(prompt,"s");
-         if txt=="Y";
-             fprintf("keep\n");
-             % Save cloudpass
-             date_txt = string(starttime, 'yyyy-MM-dd-HH-mm-ss') + '_' + string(endtime, 'yyyy-MM-dd-HH-mm-ss');
-             passname = flightnumber + "_" + date_txt;
-             if all(temp(logicalIndexes) >= 0);
-                 tempFile = "WarmClouds";
-                 if largeconc > 100;
-                    concFile = "HighConc";
-                 else 
-                    concFile = "LowConc";
-                 end
-                 passFolder = parentFolder + '/' + tempFile + '/' + concFile;
-             else
-                 tempFile = "ColdClouds";
-                 passFolder = parentFolder + '/' + tempFile;
-             end
-                
-             
-             % Save figure
-             figname = passname + ".png";
-             figfile = fullfile(passFolder, figname);
-             if ~isfile(figfile)
-                 saveas(fig, figfile);
-             end
-             
-             
-             % Save data
-             % CDP data
-             % timestamps, LWC, meandiam, binedges, bincenters, concentration
-             cdpname = "cdp_" + passname + ".nc";
-             cdpfile = fullfile(passFolder, cdpname);
-             if ~isfile(cdpfile)
-                 nccreate(cdpfile, 'time', "Dimensions", {"time", length(time(logicalIndexes))}, "Format","classic" );
-                 ncwrite(cdpfile, 'time', time(logicalIndexes));
-                 nccreate(cdpfile, 'LWC', "Dimensions", {"time", length(time(logicalIndexes))});
-                 ncwrite(cdpfile, 'LWC', cdplwc(logicalIndexes));
-                 nccreate(cdpfile, 'bins', "Dimensions", {"bins", 30});
-                 ncwrite(cdpfile, 'bins', bins);
-                 nccreate(cdpfile, 'bin_edges', "Dimensions", {"bin_edges", 31});
-                 ncwrite(cdpfile, 'bin_edges', bin_edges);
-                 nccreate(cdpfile, 'PSD', "Dimensions", {"time", length(time(logicalIndexes)), "bins", 30});
-                 ncwrite(cdpfile, 'PSD', transpose(conc2(:,logicalIndexes)));
-             end
-             
-             
-             % Aircraft data csv
-             % timestamp, air_temp, vwind, icing, altitude, lat, lon
-             output_data = table('Size', [length(time2(logicalIndexes)) 0]);
-             output_data.Time = time2(logicalIndexes);
-             output_data.Temperature = temp(logicalIndexes);
-             output_data.VerticalWind = vwind(logicalIndexes);
-             output_data.Icing = icing(logicalIndexes);
-             output_data.Altitude = alt(logicalIndexes);
-             output_data.Latitude = lat(logicalIndexes);
-             output_data.Longitude = lon(logicalIndexes);
-             output_data.DewPoint = dpt(logicalIndexes);
-             output_data.MixingRatio = mr(logicalIndexes);
-             
-             output_filename = fullfile(passFolder, sprintf('aircraft_%s.csv', passname));
-             if ~isfile(output_filename)
-                writetable(output_data, output_filename);
-             end
-             
-             summary = [summary;pass];
-             tempTypes = [tempTypes;tempFile];
-             n=n+1;
-         end
-         
     end
-    summary.CloudTemp = tempTypes
-    summary_filename = fullfile(parentFolder, sprintf('%s_summary.csv', flightnumber));
-    writetable(summary, summary_filename);
     
 end
