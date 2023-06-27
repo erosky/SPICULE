@@ -2,7 +2,7 @@ function [Dcenters, N] = pdf_test(quicklookfile, numberofbins);
 % return bin centers and number of particles in the bin
 
 quicklook = load(quicklookfile); % loaded structure
-diameters = quicklook.pd_out.eqDiam;
+diameters = quicklook.ans.eqDiam;
 totalN = length(diameters);
 
 
@@ -12,9 +12,12 @@ N = [];
 
 
 % Find total sample volume of all holograms combined
-samples = length(quicklook.pd_out.counts)
-sample_volume = 20; %cubic cm
-volume = samples*sample_volume
+samples = length(quicklook.ans.counts)
+dy = 0.28; %cm
+dx = 1.44; %cm
+dz = 13; %cm
+sample_volume = dy*dx*dz %cubic cm
+volume = samples*sample_volume;
 
 
 Dedges = zeros(numbins+1,1); Dedges(1) = min(diameters); Dedges(end) = max(diameters);
@@ -36,11 +39,6 @@ end
 N = particlesinbin./totalN;
 C = particlesinbin./volume;
 
-figure
-semilogx(Dcenters.*1000000,N), 
-xlabel('Diameter (microns)'), ylabel('Probability (Nbin/Ntotal)')
-title('PDF from SPICULE Holodec')
-
 
 %Plot droplet size distribution in #/cc/um
 figure
@@ -48,6 +46,24 @@ semilogy(Dcenters.*1000000,C),
 xlabel('Diameter (microns)'), ylabel('Concentration (#/cc/micron)')
 title('DSD from SPICULE Holodec')
 
+% fig = figure(1);
+% %Concentration contour
+% levels = 10.^(linspace(0,4,20));  %Log10 levels
+% contourf(time, bins, transpose(conc), levels, 'LineStyle', 'none');
+% if ~isempty(SIZE)
+% hold on
+% yline(SIZE,'-',sprintf('90th percentile: %0.2f',SIZE));
+% end
+% hold off
+% datetick('x')
+% set(gca,'ColorScale','log');
+% grid on
+% 
+% xlabel('Time')
+% ylabel('Diameter (microns)');
+% c=colorbar;
+% set(gca,'ColorScale','log');
+% c.Label.String = 'Concentration (#/cc/um)';
 
 
 

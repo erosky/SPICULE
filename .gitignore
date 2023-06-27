@@ -21,3 +21,6 @@
 
 # exclude .tar files
 *.tar*
+
+# exclude .zip files
+*.zip

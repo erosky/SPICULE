@@ -9,12 +9,19 @@ function out = plot_cdp(ncfile)
     meandiam = ncread(ncfile,'DBARD_LWOO');
     flightnumber = upper(ncreadatt(ncfile, '/', 'FlightNumber'));
     flightdate = ncreadatt(ncfile, '/', 'FlightDate');
+    time_ref = split(flightdate, "/");
+    
+    time = datetime(str2double(time_ref{3}),str2double(time_ref{1}),str2double(time_ref{2})) + seconds(time(:,1));
 
     
     %Reshape the concentration array into two dimensions
     s = size(conc)
     conc2 = reshape(conc, [s(1), s(3)]);
     s2 = size(conc2)
+    
+    function mypostcallback(obj,evd,AX)
+        datetick('x', 'keeplimits'); % update dateticks on the 1st axis
+    end
     
     %Make figure
     figure(1);
@@ -23,8 +30,11 @@ function out = plot_cdp(ncfile)
     
     %Concentration contour
     levels = 10.^(linspace(0,2,20));  %Log10 levels
-    contourf(time, binsizes, conc2, levels, 'LineStyle', 'none');
+    contourf(datenum(time), binsizes(1:end-1), conc2, levels, 'LineStyle', 'none');
+    datetick('x');
     set(gca,'ColorScale','log');
+    test = gca(); 
+    test.XTick = linspace(test.XTick(1),test.XTick(end),1000); 
     grid on
 
     xlabel('Time (s)')
@@ -35,20 +45,22 @@ function out = plot_cdp(ncfile)
     title([flightnumber ' ' date]);
     
     %Mean Diameter
-    ax2 = nexttile;
-    plot(time, meandiam)
-    ylim([0 50])
-    xlabel('Time (s)')
-    ylabel('Dbar (microns)')
-    grid on
-    
-    %LWC
-    ax3 = nexttile;
-    plot(time, cdplwc)
-    ylim([0 2])
-    xlabel('Time (s)')
-    ylabel('LWC (g/m3)')
-    grid on
+%     ax2 = nexttile;
+%     plot(datenum(time), meandiam)
+%     datetick('x')
+%     ylim([0 50])
+%     xlabel('Time (s)')
+%     ylabel('Dbar (microns)')
+%     grid on
+%     
+%     %LWC
+%     ax3 = nexttile;
+%     plot(datenum(time), cdplwc)
+%     datetick('x')
+%     ylim([0 2])
+%     xlabel('Time (s)')
+%     ylabel('LWC (g/m3)')
+%     grid on
     
     %Link axes for panning and zooming
     linkaxes([ax1, ax2, ax3],'x');

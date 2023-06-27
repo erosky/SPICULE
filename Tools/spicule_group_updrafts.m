@@ -12,7 +12,6 @@ function out = spicule_group_updrafts(ncfile)
     time = ncread(ncfile,'Time');
     conc = ncread(ncfile, 'CCDP_LWOO');
     bin_edges = ncreadatt(ncfile, 'CCDP_LWOO', 'CellSizes');
-    cdplwc = ncread(ncfile,'PLWCD_LWOO');
     meandiam = ncread(ncfile,'DBARD_LWOO');
     flightnumber = upper(ncreadatt(ncfile, '/', 'FlightNumber'));
     flightdate = ncreadatt(ncfile, '/', 'FlightDate');
@@ -43,6 +42,7 @@ function out = spicule_group_updrafts(ncfile)
     ewx = ncread(ncfile,'EWX'); % mixing ratio dependency (ambient water vapor pressure)
     kinglwc = ncread(ncfile,'PLWCC'); % Corrected PMS-King Liquid Water Content
     abs_hum = ncread(ncfile,'RHODT'); %Absolute humidity g/m3
+    cdplwc = ncread(ncfile,'PLWCD_LWOO');
     
     
     % Reformat time to human readable format
@@ -61,9 +61,9 @@ function out = spicule_group_updrafts(ncfile)
     Bin = 13; % lower limit bin index
     Conc_threshold = 50.0; % #/cc/um
     
-    summary = table('Size',[0 14],...
-                        'VariableTypes',{'datetime','datetime','int8','double','double','double', 'double', 'double','double','double','double', 'double', 'string', 'string'},...
-                        'VariableNames', ["StartTime", "EndTime", "Duration_s", "AverageLWC_g_m3", "Average_meanDiam","AverageLat", "AverageLon", "AverageAlt", "AverageTemp", "MaxUpdraft", "MeanUpdraft", "AbsoluteHumidity", "InCloud_Flag", "HoloData_Flag"]);
+    summary = table('Size',[0 16],...
+                        'VariableTypes',{'datetime','datetime','int8','double','double','double', 'double', 'double','double','double','double', 'double', 'double', 'double', 'string', 'string'},...
+                        'VariableNames', ["StartTime", "EndTime", "Duration_s", "AverageLWC_g_m3", "Average_meanDiam","AverageLat", "AverageLon", "AverageAlt", "AverageTemp", "MaxUpdraft", "MeanUpdraft", "AbsoluteHumidity", "MixingRatio", "StaticPres_hPa", "InCloud_Flag", "HoloData_Flag"]);
     
        
     for p = 1 : length(i)
@@ -95,47 +95,6 @@ function out = spicule_group_updrafts(ncfile)
              in_cloud = "No";
          end
 
-         % Save data
-         % CDP data
-         % timestamps, LWC, meandiam, binedges, bincenters, concentration
-         cdpname = "cdp_" + passname + ".nc";
-         cdpfile = fullfile(passFolder, cdpname);
-         if ~isfile(cdpfile)
-             nccreate(cdpfile, 'time', "Dimensions", {"time", length(time(logicalIndexes))}, "Format","classic" );
-             ncwrite(cdpfile, 'time', time(logicalIndexes));
-             nccreate(cdpfile, 'LWC', "Dimensions", {"time", length(time(logicalIndexes))});
-             ncwrite(cdpfile, 'LWC', cdplwc(logicalIndexes));
-             nccreate(cdpfile, 'bins', "Dimensions", {"bins", 30});
-             ncwrite(cdpfile, 'bins', bins);
-             nccreate(cdpfile, 'bin_edges', "Dimensions", {"bin_edges", 31});
-             ncwrite(cdpfile, 'bin_edges', bin_edges);
-             nccreate(cdpfile, 'PSD', "Dimensions", {"time", length(time(logicalIndexes)), "bins", 30});
-             ncwrite(cdpfile, 'PSD', transpose(conc2(:,logicalIndexes)));
-         end
-
-
-         % Aircraft data csv
-         % timestamp, air_temp, vwind, icing, altitude, lat, lon
-         output_data = table('Size', [length(time2(logicalIndexes)) 0]);
-         output_data.Time = time2(logicalIndexes);
-         output_data.Temperature = temp(logicalIndexes);
-         output_data.VerticalWind = vwind(logicalIndexes);
-         output_data.Icing = icing(logicalIndexes);
-         output_data.Altitude = alt(logicalIndexes);
-         output_data.Latitude = lat(logicalIndexes);
-         output_data.Longitude = lon(logicalIndexes);
-         output_data.DewPoint = dpt(logicalIndexes);
-         output_data.MixingRatio = mr(logicalIndexes);
-         output_data.LargeConc = transpose(large_conc);
-         output_data.SmallConc = transpose(small_conc);
-         output_data.kingLWC = kinglwc(logicalIndexes);
-         output_data.absHumidity = abs_hum(logicalIndexes);
-
-         output_filename = fullfile(passFolder, sprintf('aircraft_%s.csv', passname));
-         if ~isfile(output_filename)
-            writetable(output_data, output_filename);
-         end
-
 
          % average mean diameter
          avg_diam = mean(meandiam(i{p}(1):i{p}(end)));
@@ -148,9 +107,11 @@ function out = spicule_group_updrafts(ncfile)
          max_updraft = max(vwind(i{p}(1):i{p}(end)));
          avg_updraft = mean(vwind(i{p}(1):i{p}(end)));
          avg_hum = mean(abs_hum(i{p}(1):i{p}(end)));
+         avg_mr = mean(mr(i{p}(1):i{p}(end)));
+         avg_pres = mean(psxc(i{p}(1):i{p}(end)));
          
          
-         pass = {utc{p}(1), utc{p}(2), length(i{p}), avg_lwc, avg_diam, avg_lat, avg_lon, avg_alt, avg_temp, max_updraft, avg_updraft, avg_hum, in_cloud, holodec};
+         pass = {utc{p}(1), utc{p}(2), length(i{p}), avg_lwc, avg_diam, avg_lat, avg_lon, avg_alt, avg_temp, max_updraft, avg_updraft, avg_hum, avg_mr, avg_pres, in_cloud, holodec};
          summary = [summary;pass];
  
          
